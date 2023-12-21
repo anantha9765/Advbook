@@ -1,0 +1,57 @@
+{% extends 'data.html' %}
+{% load static %}
+
+{% block body %}
+{% endblock %}
+
+{% block content %}
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">ADVOCATE DETAILS</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Image</th>
+                  <th>Education</th>
+                  <th>Proof</th>
+                  <th>Accept</th>
+                  <th>Reject</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for i in var %}
+                <tr>
+                  <td>{{i.name}}</td>
+                  <td>{{i.email}}</td>
+                  <td>{{i.number}}</td>
+                  <td><a href="{{i.image.url}}">View Image</a></td>
+                  <td>{{i.edu_details}}</td>
+                  <td><a href="{{i.edu_proof.url}}">View Proof</a></td>
+                  <td><a href="{% url 'approve_admin' i.id %}"><button class="btn btn-success">Accept</button></a></td>
+                  <td><a href="{% url 'reject_admin' i.id %}"><button class="btn btn-danger">Reject</button></a></td>
+                </tr>
+                {% endfor %}
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  
+{% endblock %}

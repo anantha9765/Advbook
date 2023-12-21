@@ -1,0 +1,173 @@
+{% extends 'advbook.html' %}
+{% load static %}
+
+{% block head %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Advbook</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+{% endblock %}
+
+{% block slider %}
+{% endblock %}
+ 
+{% block about %}
+{% endblock %}
+
+{% block content1 %}
+{% endblock %}
+
+{% block content2 %}
+        <!-- our_loyers-start  -->
+    <div class="our_loyers">
+        <div class="container">
+                <div class="row">
+                        <div class="col-xl-12">
+                            {% for i in adv %}
+                            <div class="section_title text-center mb-60">
+                                <h3>{{i.name}}</h3><br>
+                                <p><img src="{{i.image.url}}" alt="" style="width:250px; height:250px; border-radius: 50%;"></p>
+                                <p>Educational Qualification: {{i.edu_details}}</p>
+                                <p>Contact: {{i.number}}</p>
+                                <p>Email: {{i.email}}</p><br>
+                                <p>Achievements: {{i.achievement}}</p><br>
+                                <p><!DOCTYPE html>
+                                    <html lang="en">
+                                    <head>
+                                        <meta charset="UTF-8">
+                                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                        <title>Reviews</title>
+                                        <style>
+                                            body {
+                                                font-family: Arial, sans-serif;
+                                                margin: 0;
+                                                padding: 0;
+                                                background-color: #f4f4f4;
+                                            }
+                                    
+                                            .review-box {
+                                                max-width: 600px;
+                                                margin: 50px auto;
+                                                background-color: #fff;
+                                                border: 1px solid #ddd;
+                                                border-radius: 8px;
+                                                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                                                padding: 20px;
+                                                text-align: left;
+                                            }
+                                    
+                                            .review-box h2 {
+                                                color: #333;
+                                            }
+                                    
+                                            .review-box p {
+                                                color: #666;
+                                                line-height: 1.6;
+                                            }
+                                    
+                                            .review-box .author {
+                                                margin-top: 20px;
+                                                font-style: italic;
+                                                color: #888;
+                                            }
+                                        </style>
+                                    </head>
+                                    <body>
+                                        <div class="review-box">
+                                            {% for i in ad %}
+                                            <p>{{i.user_review}}</p>
+                                            <p class="author">-{{i.user_id.name}}</p>
+                                            <p><!DOCTYPE html>
+                                                <html lang="en">
+                                                <head>
+                                                    <meta charset="UTF-8">
+                                                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                                    <style>
+                                                        /* Add your CSS styles here */
+                                                        .rating {
+                                                            unicode-bidi: bidi-override;
+                                                            direction: rtl;
+                                                            text-align: center;
+                                                        }
+                                                        .rating input {
+                                                            display: none;
+                                                        }
+                                                        .rating label {
+                                                            display: inline-block;
+                                                            padding: 0 1px;
+                                                            font-size: 24px;
+                                                            line-height: 1.2;
+                                                            cursor: pointer;
+                                                        }
+                                                        .rating label:before {
+                                                            content: "\2605"; /* Unicode character for a star */
+                                                        }
+                                                        .rating input:checked ~ label:before {
+                                                            content: "\2605"; /* Unicode character for a filled star */
+                                                            color: gold;
+                                                        }
+                                                    </style>
+                                                </head>
+                                                <body>
+                                                
+                                                <div class="rating-star">
+                                                    <span style="color:gold;"><i class="fa fa-star{% if i.rating == 0.5 %}-half-o{% elif i.rating < 1%}-o{% endif %}" aria-hidden="true"></i></span>
+                                                    <span style="color:gold;"><i class="fa fa-star{% if i.rating == 1.5 %}-half-o{% elif i.rating < 2%}-o{% endif %}" aria-hidden="true"></i></span>
+                                                    <span style="color:gold;"><i class="fa fa-star{% if i.rating == 2.5 %}-half-o{% elif i.rating < 3%}-o{% endif %}" aria-hidden="true"></i></span>
+                                                    <span style="color:gold;"><i class="fa fa-star{% if i.rating == 3.5 %}-half-o{% elif i.rating < 4%}-o{% endif %}" aria-hidden="true"></i></span>
+                                                    <span style="color:gold;"><i class="fa fa-star{% if i.rating == 4.5 %}-half-o{% elif i.rating < 5%}-o{% endif %}" aria-hidden="true"></i></span>
+                                                 </div>
+                                                 <br><br>
+                                                {% empty %}
+                                                <p>No Reviews yet!</p>
+                                                {% endfor %}
+
+                                                
+                                                    <script>
+                                                        // Add your JavaScript code here if needed
+                                                    </script>
+                                                
+                                                </body>
+                                                </html>
+                                                </p>
+                                        </div>
+                                    </body>
+                                    </html>
+                                    </p>
+                                <p><a href="{% url 'user_form' i.id %}"><button class="btn btn-success">Book an Appointment</button></a></p>
+                                {% if var %}
+                                <br><br><a href="{% url 'review' i.id %}">Give a Review</a>
+                                {% endif %}
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-- our_loyers-end  -->
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

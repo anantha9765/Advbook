@@ -1,0 +1,97 @@
+{% extends 'advbook.html' %}
+{% load static %}
+
+{% block head %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Advbook</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+{% endblock %}
+
+
+{% block slider %}
+{% endblock %}
+
+{% block about %}
+<div class="about_area">
+    <div class="opacity_icon d-none d-lg-block">
+        <i class="flaticon-balance"></i>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-md-6">
+                <div class="single_about_info text-center">
+                    <div class="about_thumb">
+                        <img src="{% static 'img/about/symbol.jpeg' %}" alt="">
+                    </div>
+                    <h3>We are dedicated to<br>
+                        getting you justice</h3>
+                    <p> Lawyers function mutually as both advocates and advisers.
+                        As advocates, they embody their clients in court by providing supportive evidence.   
+                        As advisers, they advise their clients on their legal rights and obligations.
+                        Our aim here is to connect all of you seraching for an apt lawyer to a rightfull one. 
+                        </p>
+                    <div class="signature">
+                        <img src="{% static 'img/about/sign.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-6">
+                <div class="single_about_info text-center">
+                    <div class="about_thumb">
+                        <div class="image_hover">
+                            <div class="hover_inner">
+                                <h2>93%</h2>
+                                <span>Success Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Our Success!</h3>
+                    <p>We are successful in uniting our users to the <br>best possible attorney they could afford.  </p>
+          
+                    <div class="total_cases">
+                        <div class="single_cases">
+                            <h4>{{appointment_count}}</h4>
+                            <p>Users Connected</p>
+                        </div>
+                        <div class="single_cases">
+                            <h4>17</h4>
+                            <p>Cases Won</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content1 %}
+{% endblock %}
+
+{% block content2 %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
